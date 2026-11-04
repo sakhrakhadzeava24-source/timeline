@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splide Gallery Slideshow</title>
+
+  <!-- Splide.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .gallery-container {
+      max-width: 800px;
+      width: 100%;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* მთავარი სლაიდერის სტილები */
+    #main-slider {
+      margin-bottom: 10px;
+    }
+
+    #main-slider .splide__slide {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 400px;
+    }
+
+    #main-slider .splide__slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* სათაურის და აღწერის გადაფარვა (Overlay) */
+    .slide-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+      color: #fff;
+      padding: 20px;
+    }
+
+    .slide-caption h3 {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .slide-caption p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    /* Thumbnail სლაიდერის სტილები */
+    #thumbnail-slider .splide__slide {
+      opacity: 0.6;
+      cursor: pointer;
+      border-radius: 6px;
+      overflow: hidden;
+      height: 100px;
+      transition: opacity 0.3s ease, border-color 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    #thumbnail-slider .splide__slide.is-active {
+      opacity: 1;
+      border-color: #4a90e2;
+    }
+
+    #thumbnail-slider .splide__slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gallery-container">
+    <!-- მთავარი სლაიდერი -->
+    <section id="main-slider" class="splide" aria-label="Gallery Main Slider">
+      <div class="splide__track">
+        <ul class="splide__list" id="main-slides-list"></ul>
+      </div>
+    </section>
+
+    <!-- Thumbnail სლაიდერი -->
+    <section id="thumbnail-slider" class="splide" aria-label="Gallery Thumbnail Slider">
+      <div class="splide__track">
+        <ul class="splide__list" id="thumbnail-slides-list"></ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- Splide.js JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+  <script>
+    // slides.json-ის იმიტაცია (მონაცემები JSON სტრუქტურის მიხედვით)
+    const slidesData = [
+      {
+        "image": "https://picsum.photos/id/1018/800/500",
+        "title": "მთის პეიზაჟი",
+        "description": "ულამაზესი ხედი მთებსა და ველებზე მზის ჩასვლისას."
+      },
+      {
+        "image": "https://picsum.photos/id/1015/800/500",
+        "title": "მდინარის ხეობა",
+        "description": "წყნარი მდინარე, რომელიც მიედინება მწვანე ტყის შუაგულში."
+      },
+      {
+        "image": "https://picsum.photos/id/1019/800/500",
+        "title": "ზღვის სანაპირო",
+        "description": "ტალღების ხმა და სიმშვიდე ოკეანის ნაპირას."
+      },
+      {
+        "image": "https://picsum.photos/id/1039/800/500",
+        "title": "შემოდგომის ტყე",
+        "description": "ფერადი ფოთოლცვენა და შემოდგომის თბილი ტონები."
+      }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainList = document.getElementById('main-slides-list');
+      const thumbList = document.getElementById('thumbnail-slides-list');
+
+      // სლაიდების დინამიური გენერაცია JSON მონაცემებიდან
+      slidesData.forEach(slide => {
+        // 1. მთავარი სლაიდი
+        const mainLi = document.createElement('li');
+        mainLi.className = 'splide__slide';
+        mainLi.innerHTML = `
+          <img src="${slide.image}" alt="${slide.title}">
+          <div class="slide-caption">
+            <h3>${slide.title}</h3>
+            <p>${slide.description}</p>
+          </div>
+        `;
+        mainList.appendChild(mainLi);
+
+        // 2. Thumbnail სლაიდი
+        const thumbLi = document.createElement('li');
+        thumbLi.className = 'splide__slide';
+        thumbLi.innerHTML = `<img src="${slide.image}" alt="${slide.title}">`;
+        thumbList.appendChild(thumbLi);
+      });
+
+      // Splide ინსტანციების ინიციალიზაცია
+      const main = new Splide('#main-slider', {
+        type: 'fade',
+        rewind: true,
+        pagination: false,
+        arrows: false,
+      });
+
+      const thumbnails = new Splide('#thumbnail-slider', {
+        fixedWidth: 120,
+        fixedHeight: 80,
+        gap: 10,
+        rewind: true,
+        pagination: false,
+        isNavigation: true,
+        breakpoints: {
+          600: {
+            fixedWidth: 80,
+            fixedHeight: 60,
+          },
+        },
+      });
+
+      // სლაიდერების დაკავშირება (Sync)
+      main.sync(thumbnails);
+      main.mount();
+      thumbnails.mount();
+    });
+  </script>
+</body>
+</html>

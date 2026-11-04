@@ -1,0 +1,135 @@
+{
+  "title": {
+    "media": {
+      "url": "https://live.staticflickr.com/6055/6115056146_3bb04c8f0b_b.jpg",
+      "caption": "Flickr Photo Example 1",
+      "credit": "Zach Wise"
+    },
+    "text": {
+      "headline": "ჩემი ინტერაქტიული თაიმლაინი",
+      "text": "<p>ეს თაიმლაინი შექმნილია TimelineJS პაკეტის გამოყენებით და შეიცავს კონკრეტულ მედია ფაილებს Flickr-იდან და Vimeo-დან.</p>"
+    }
+  },
+  "events": [
+    {
+      "start_date": { "year": "2011", "month": "9", "day": "5" },
+      "media": {
+        "url": "https://live.staticflickr.com/6055/6115056146_3bb04c8f0b_b.jpg",
+        "caption": "პირველი ფოტო Flickr-დან",
+        "credit": "Zach Wise"
+      },
+      "text": {
+        "headline": "მოვლენა 1: პირველი ფოტოს ისტორია",
+        "text": "ეს არის პირველი მოვლენა, რომელიც იყენებს თქვენს მიერ მოწოდებულ Flickr-ის ფოტოს (ბმული: https://www.flickr.com/photos/zachwise/6115056146/)."
+      }
+    },
+    {
+      "start_date": { "year": "2012", "month": "3", "day": "15" },
+      "media": {
+        "url": "https://live.staticflickr.com/7181/6894476777_c53f024982_b.jpg",
+        "caption": "მეორე ფოტო Flickr-დან",
+        "credit": "Zach Wise"
+      },
+      "text": {
+        "headline": "მოვლენა 2: მეორე ფოტოს ისტორია",
+        "text": "ეს არის მეორე მოვლენა თქვენი მედიიდან, რომელიც აღებულია მეორე Flickr ბმულიდან (https://www.flickr.com/photos/zachwise/6894476777/)."
+      }
+    },
+    {
+      "start_date": { "year": "2015", "month": "10", "day": "20" },
+      "media": {
+        "url": "https://vimeo.com/143407878",
+        "caption": "Vimeo ვიდეო",
+        "credit": "Vimeo"
+      },
+      "text": {
+        "headline": "მოვლენა 3: ვიდეო მასალა",
+        "text": "ეს მოვლენა წარმოადგენს ვიდეოს Vimeo-ს პლატფორმიდან (https://vimeo.com/143407878), რომელიც პირდაპირ იტვირთება TimelineJS-ში."
+      }
+    },
+    {
+      "start_date": { "year": "2016", "month": "1", "day": "10" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Sputnik_1.jpg",
+        "caption": "სპუტნიკ-1",
+        "credit": "Public Domain"
+      },
+      "text": {
+        "headline": "მოვლენა 4: ტექნოლოგიური პროგრესი",
+        "text": "დამატებითი მოვლენა ქრონოლოგიის გასამდიდრებლად."
+      }
+    },
+    {
+      "start_date": { "year": "2017", "month": "5", "day": "12" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Yuri_Gagarin_1961.jpg",
+        "caption": "ისტორიული მომენტი",
+        "credit": "RIA Novosti"
+      },
+      "text": {
+        "headline": "მოვლენა 5: ახალი ეტაპი",
+        "text": "მნიშვნელოვანი ეტაპი განვითარების გზაზე."
+      }
+    },
+    {
+      "start_date": { "year": "2018", "month": "8", "day": "22" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Apollo_11_launch.jpg",
+        "caption": "კოსმოსური მისია",
+        "credit": "NASA"
+      },
+      "text": {
+        "headline": "მოვლენა 6: მასშტაბური პროექტი",
+        "text": "წარმატებით განხორციელებული მნიშვნელოვანი ღონისძიება."
+      }
+    },
+    {
+      "start_date": { "year": "2019", "month": "9", "day": "18" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/HST-SM3B.jpg",
+        "caption": "ტელესკოპი",
+        "credit": "NASA"
+      },
+      "text": {
+        "headline": "მოვლენა 7: დაკვირვება და კვლევა",
+        "text": "ახალი ჰორიზონტების გახსნა და მონაცემების შეგროვება."
+      }
+    },
+    {
+      "start_date": { "year": "2020", "month": "11", "day": "5" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/International_Space_Station_seen_from_STS-132.jpg",
+        "caption": "საერთაშორისო სადგური",
+        "credit": "NASA"
+      },
+      "text": {
+        "headline": "მოვლენა 8: გლობალური თანამშრომლობა",
+        "text": "ერთობლივი ძალისხმევით მიღწეული წარმატება."
+      }
+    },
+    {
+      "start_date": { "year": "2021", "month": "12", "day": "25" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/JWST_telescope_in_space.jpg",
+        "caption": "თანამედროვე ტელესკოპი",
+        "credit": "NASA"
+      },
+      "text": {
+        "headline": "მოვლენა 9: ინოვაციური მიღწევა",
+        "text": "ახალი თაობის ტექნოლოგიების დანერგვა პრაქტიკაში."
+      }
+    },
+    {
+      "start_date": { "year": "2024", "month": "1", "day": "19" },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/SLIM_Moon_Landing_Artist_Concept.png",
+        "caption": "მთვარის მისია",
+        "credit": "JAXA"
+      },
+      "text": {
+        "headline": "მოვლენა 10: სამომავლო პერსპექტივები",
+        "text": "დასკვნითი ეტაპი და სამომავლო გეგმები."
+      }
+    }
+  ]
+}
